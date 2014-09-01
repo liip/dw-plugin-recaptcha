@@ -1,0 +1,7 @@
+# General Plugin Info do not edit
+
+author Adrian Schlegel, lsmith, Pierre Spring, Robert Bronsdon
+email  contact@liip.ch
+date   2009-12-10
+name   recaptcha
+desc   add a recaptcha to the register form
