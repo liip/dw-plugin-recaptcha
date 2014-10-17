@@ -1,6 +1,6 @@
 <?php
 /**
- * English language file
+ * Korean language file
  *
  * @author Adrian Schlegel <adrian.schlegel@liip.ch>
  */
