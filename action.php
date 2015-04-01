@@ -14,15 +14,6 @@ class action_plugin_recaptcha extends DokuWiki_Action_Plugin {
     private $recaptchaLangs = array('en', 'nl', 'fr', 'de', 'pt', 'ru', 'es', 'tr');
 
     /**
-     * get plugin info
-     *
-     */
-    function getInfo()
-    {
-        return confToHash(dirname(__FILE__).'../info.txt');
-    }
-
-    /**
      * register an event hook
      *
      */
@@ -110,7 +101,7 @@ class action_plugin_recaptcha extends DokuWiki_Action_Plugin {
 		// by default let's assume that protocol is http
 		$use_ssl = false;
 		// trying to find https in current url
-		if(preg_match('https://', $INFO['id']){
+		if(preg_match('/^https:\/\/.*', $INFO['id']){
 			$use_ssl = true;
 		}
         // see first if a language is defined for the plugin, if not try to use the language defined for dokuwiki
