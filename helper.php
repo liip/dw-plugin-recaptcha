@@ -12,13 +12,6 @@ require_once(dirname(__FILE__).'/lib/recaptchalib.php');
 class helper_plugin_recaptcha extends DokuWiki_Plugin {
 
     /**
-     * return some info
-     */
-    function getInfo(){
-        return confToHash(dirname(__FILE__).'/info.txt');
-    }
-
-    /**
      * Check if the reCAPTCHA should be used. Always check this before using the methods below.
      *
      * @return bool true when the reCAPTCHA should be used
@@ -46,10 +39,10 @@ class helper_plugin_recaptcha extends DokuWiki_Plugin {
 
     /**
      * return the html code for the recaptcha block
-     *
+     * @param  boolean $use_ssl
      * @return string 
      */
-    function getHTML() {
-        return recaptcha_get_html($this->getConf('publickey'));
+    function getHTML($use_ssl = false) {
+        return recaptcha_get_html($this->getConf('publickey'), null, $use_ssl);
     }
 }

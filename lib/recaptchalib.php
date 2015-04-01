@@ -35,8 +35,10 @@
 /**
  * The reCAPTCHA server URL's
  */
-define("RECAPTCHA_API_SERVER", "http://api.recaptcha.net");
-define("RECAPTCHA_API_SECURE_SERVER", "https://api-secure.recaptcha.net");
+define("PROTO", "http://");
+define("PROTO_SECURE", "https://");
+define("RECAPTCHA_API_SERVER", "www.google.com/recaptcha/api");
+define("RECAPTCHA_API_SECURE_SERVER", "www.google.com/recaptcha/api");
 define("RECAPTCHA_VERIFY_SERVER", "api-verify.recaptcha.net");
 
 /**
@@ -106,13 +108,13 @@ function _recaptcha_http_post($host, $path, $data, $port = 80) {
 function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
 {
 	if ($pubkey == null || $pubkey == '') {
-		die ("To use reCAPTCHA you must get an API key from <a href='http://recaptcha.net/api/getkey'>http://recaptcha.net/api/getkey</a>");
+		die ("To use reCAPTCHA you must get an API key from <a href='http://www.google.com/recaptcha'>http://www.google.com/recaptcha</a>");
 	}
 	
 	if ($use_ssl) {
-                $server = RECAPTCHA_API_SECURE_SERVER;
+                $server = PROTO_SECURE . RECAPTCHA_API_SECURE_SERVER;
         } else {
-                $server = RECAPTCHA_API_SERVER;
+                $server = PROTO . RECAPTCHA_API_SERVER;
         }
 
         $errorpart = "";
@@ -127,8 +129,6 @@ function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false)
   		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
 	</noscript>';
 }
-
-
 
 
 /**
@@ -152,7 +152,7 @@ class ReCaptchaResponse {
 function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $extra_params = array())
 {
 	if ($privkey == null || $privkey == '') {
-		die ("To use reCAPTCHA you must get an API key from <a href='http://recaptcha.net/api/getkey'>http://recaptcha.net/api/getkey</a>");
+		die ("To use reCAPTCHA you must get an API key from <a href='http://www.google.com/recaptcha'>http://www.google.com/recaptcha</a>");
 	}
 
 	if ($remoteip == null || $remoteip == '') {
