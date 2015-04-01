@@ -42,7 +42,7 @@ class helper_plugin_recaptcha extends DokuWiki_Plugin {
      * @param  boolean $use_ssl
      * @return string 
      */
-    function getHTML($use_ssl) {
+    function getHTML($use_ssl = false) {
         return recaptcha_get_html($this->getConf('publickey'), null, $use_ssl);
     }
 }
