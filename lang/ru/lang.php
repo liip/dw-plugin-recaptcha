@@ -1,8 +1,8 @@
 <?php
 /**
- * German language file
+ * Russian language file
  *
- * @author Adrian Schlegel <adrian.schlegel@liip.ch>
+ * @author Дмитрий К (Rainbow Spike)
  */
 
 $lang['testfailed']  = "Текст набран неправильно.";
