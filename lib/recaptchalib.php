@@ -37,8 +37,8 @@
  */
 define("PROTO", "http://");
 define("PROTO_SECURE", "https://");
-define("RECAPTCHA_API_SERVER", "www.google.com/recaptcha/api/");
-define("RECAPTCHA_API_SECURE_SERVER", "www.google.com/recaptcha/api/");
+define("RECAPTCHA_API_SERVER", "www.google.com/recaptcha/api");
+define("RECAPTCHA_API_SECURE_SERVER", "www.google.com/recaptcha/api");
 define("RECAPTCHA_VERIFY_SERVER", "api-verify.recaptcha.net");
 
 /**
