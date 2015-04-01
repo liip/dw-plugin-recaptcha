@@ -49,7 +49,7 @@ class helper_plugin_recaptcha extends DokuWiki_Plugin {
      *
      * @return string 
      */
-    function getHTML() {
-        return recaptcha_get_html($this->getConf('publickey'));
+    function getHTML($use_ssl) {
+        return recaptcha_get_html($this->getConf('publickey'), null, $use_ssl);
     }
 }
